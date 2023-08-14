@@ -1,4 +1,16 @@
-ListNode* reverse(ListNode* first, ListNode* last) {
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverse(ListNode* first, ListNode* last) {
         //This function would make the head point to the (k+1)th node
         //followed by the reversed LL of group of size k
         //For LL 1->2->3->4-> and k=3, f=1, l=4
@@ -31,4 +43,5 @@ ListNode* reverse(ListNode* first, ListNode* last) {
         //head is now the last member of the reversed group
         head->next = reverseKGroup(temp, k);
         return headOfReversedGroup;
-}
+    }
+};
