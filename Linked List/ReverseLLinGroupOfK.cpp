@@ -28,6 +28,7 @@ ListNode* reverse(ListNode* first, ListNode* last) {
         //temp is pointing to (k+1)th node or the first node of next group
         //first = 0th node   last = (k+1)th node
         ListNode* headOfReversedGroup = reverse(head, temp);
+        //head is now the last member of the reversed group
         head->next = reverseKGroup(temp, k);
         return headOfReversedGroup;
 }
